@@ -649,9 +649,9 @@ namespace Nos3
         Float p_z_sigma = 0.0; // - TODO FIX ME - Just an example
         Enum v_sol_status("SOL_COMPUTED"); // - TODO FIX ME - Just an example
         Enum vel_type("NARROW_INT"); // - TODO FIX ME - Just an example
-        Double v_x = data_point.get_velocity_x();
-        Double v_y = data_point.get_velocity_y();
-        Double v_z = data_point.get_velocity_z();
+        Double v_x = data_point.get_ECEF_vx();
+        Double v_y = data_point.get_ECEF_vy();
+        Double v_z = data_point.get_ECEF_vz();
         Double v_x_sigma = 0.0; // - TODO FIX ME - Just an example
         Double v_y_sigma = 0.0; // - TODO FIX ME - Just an example
         Double v_z_sigma = 0.0; // - TODO FIX ME - Just an example
@@ -747,13 +747,13 @@ namespace Nos3
         out.push_back(0); out.push_back(0); out.push_back(0); out.push_back(0); // V-sol status
         out.push_back(0); out.push_back(0); out.push_back(0); out.push_back(50); // vel type
 
-        double_to_uint8vector(data_point.get_velocity_x(), bytes); // V-X
+        double_to_uint8vector(data_point.get_ECEF_vx(), bytes); // V-X
         out.insert(out.end(), bytes.begin(), bytes.end());
         bytes.clear();
-        double_to_uint8vector(data_point.get_velocity_y(), bytes); // V-Y
+        double_to_uint8vector(data_point.get_ECEF_vy(), bytes); // V-Y
         out.insert(out.end(), bytes.begin(), bytes.end());
         bytes.clear();
-        double_to_uint8vector(data_point.get_velocity_z(), bytes); // V-Z
+        double_to_uint8vector(data_point.get_ECEF_vz(), bytes); // V-Z
         out.insert(out.end(), bytes.begin(), bytes.end());
         bytes.clear();
 

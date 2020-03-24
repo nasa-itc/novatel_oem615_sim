@@ -85,9 +85,9 @@ namespace Nos3
         double get_ECEF_x(void) const {parse_data_point(); return _ECEF[0];}
         double get_ECEF_y(void) const {parse_data_point(); return _ECEF[1];}
         double get_ECEF_z(void) const {parse_data_point(); return _ECEF[2];}
-        double get_velocity_x(void) const {parse_data_point(); return _ECI_vel[0];}
-        double get_velocity_y(void) const {parse_data_point(); return _ECI_vel[1];}
-        double get_velocity_z(void) const {parse_data_point(); return _ECI_vel[2];}
+        double get_ECEF_vx(void) const {parse_data_point(); return _ECEF_vel[0];}
+        double get_ECEF_vy(void) const {parse_data_point(); return _ECEF_vel[1];}
+        double get_ECEF_vz(void) const {parse_data_point(); return _ECEF_vel[2];}
         double get_abs_time(void) const {parse_data_point(); return _abs_time;}
         //@}
     private:
