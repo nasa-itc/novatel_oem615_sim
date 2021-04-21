@@ -134,21 +134,13 @@ namespace Nos3
         }
         
         double JD;
-        SimCoordinateTransformations::GpsTimeToJD(_gps_rollover, _gps_week, ((double)_gps_sec_week) + _gps_frac_sec, &JD);
+        SimCoordinateTransformations::GpsTimeToJD(_gps_rollover, _gps_week, ((double)_gps_sec_week) + _gps_frac_sec, JD);
         _abs_time = SimCoordinateTransformations::JDToAbsTime(JD);
         
         sim_logger->debug("GPSSimDataPoint::do_parsing:  Parsed data point:\n%s", to_string().c_str());
 
     }
 
-    void GPSSimDataPoint::parse_double_vector(const std::string& text, std::vector<double>& dv) const 
-    {
-        dv.clear();
-        std::istringstream iss(text);
-        for (std::string s; iss >> s; )
-            dv.push_back(std::stod(s));
-    }
-    
     /*************************************************************************
      * Accessors
      *************************************************************************/

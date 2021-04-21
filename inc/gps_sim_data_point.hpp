@@ -49,7 +49,7 @@ namespace Nos3
      *    we need to worry about a rotation matrix to reference the magnetometer body reference frame to the cubesat body
      *    reference frame.
      */
-    class GPSSimDataPoint : public SimIDataPoint
+    class GPSSimDataPoint : public Sim42DataPoint
     {
     public:
         /// @name Constructors
@@ -95,7 +95,6 @@ namespace Nos3
         //@{
         inline void parse_data_point(void) const {if (_not_parsed) do_parsing();}
         void do_parsing(void) const;
-        void parse_double_vector(const std::string& text, std::vector<double>& dv) const; // helper to do_parsing
         //@}
 
         // Private data
